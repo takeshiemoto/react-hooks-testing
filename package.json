@@ -49,7 +49,7 @@
     "@nrwl/tao": "11.2.10",
     "@nrwl/web": "11.2.10",
     "@nrwl/workspace": "11.2.10",
-    "@testing-library/react": "11.1.2",
+    "@testing-library/react": "^11.2.5",
     "@types/jest": "26.0.8",
     "@types/node": "12.12.38",
     "@types/react": "16.9.56",
@@ -84,8 +84,8 @@
   },
   "lint-staged": {
     "*.{js,json,css,scss,md,ts,html,graphql}": [
-      "yarn format:write --uncommitted",
-      "yarn affected:lint --uncommitted --parallel --fix"
+      "yarn run format:write --uncommitted",
+      "yarn run affected:lint --uncommitted --fix --parallel --maxParallel=5"
     ]
   }
 }
