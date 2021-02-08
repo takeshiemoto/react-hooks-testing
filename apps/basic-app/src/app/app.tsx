@@ -2,7 +2,7 @@ import React from 'react';
 import { useCount } from './useCount';
 
 export function App() {
-  const [count, increment, decrement] = useCount();
+  const { count, increment, decrement } = useCount();
   return (
     <div>
       <h1>Hello world</h1>
