@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { random } from './utils';
 
 export const useCount = (): {
@@ -8,8 +8,8 @@ export const useCount = (): {
 } => {
   const [count, setCount] = useState(random(10));
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
+  const increment = useCallback(() => setCount(count + 1), [count]);
+  const decrement = useCallback(() => setCount(count - 1), [count]);
 
   return {
     count,
